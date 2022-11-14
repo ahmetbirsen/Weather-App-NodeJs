@@ -20,7 +20,7 @@ const errorMessage = document.getElementById('error-message');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const address = search.value;
-    const url = "http://localhost:3000/weather?address="+address;
+    const url = "/weather?address="+address;
     console.log(url);
     messageOne.textContent = 'Loading ....';
     fetch(url)
