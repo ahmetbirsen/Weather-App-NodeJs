@@ -65,13 +65,14 @@ app.get('/weather' , (req,res) => {
             console.log(forecastData);
             res.send({
                 forecast : 'Degree :'+forecastData.current.temperature,
+                forecastWind : forecastData.wind_speed,
                 forecastCode : forecastData.current.weather_descriptions[0],
                 location : location
             });
           });
     })
 
-    
+    console.log("RESSS : ",res.forecastImage);
 })
 
 app.get('/help/*',(req,res) => {

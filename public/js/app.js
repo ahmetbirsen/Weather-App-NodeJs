@@ -17,6 +17,7 @@ const messageOne = document.getElementById('message-one');
 const messageTwo = document.getElementById('message-two');
 const errorMessage = document.getElementById('error-message');
 
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const address = search.value;
@@ -29,8 +30,11 @@ form.addEventListener('submit', (event) => {
                 if(data.error){
                    errorMessage.textContent  = data.error;
                 }else{
+                    let text = document.createElement("p");
                     messageOne.textContent = data.forecast;
-                    messageTwo.textContent = data.forecastCode + " -  " + data.location;
+                    messageTwo.textContent = data.forecastCode + " -  " + data.locat0ion;
+                    text.innerHTML=`Wind speed is : ${data.forecastWind}`;
+                    document.getElementById('infos').appendChild(text);
                 }
             }).catch(error => {
                 errorMessage.textContent = error;
