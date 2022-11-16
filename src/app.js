@@ -72,7 +72,6 @@ app.get('/weather' , (req,res) => {
           });
     })
 
-    console.log("RESSS : ",res.forecastImage);
 })
 
 app.get('/help/*',(req,res) => {
